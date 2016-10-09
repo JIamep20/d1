@@ -1,0 +1,260 @@
+@import 'https://fonts.googleapis.com/css?family=Open+Sans';
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+html, body {height: 100%;}
+body {
+    padding-top: 48px;
+    font: 87.5% 'Open Sans', Arial, Tahoma, sans-serif;
+    background-color: #ebebeb;
+}
+ol, ul {list-style: none;}
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+a, a:hover {text-decoration: none; color: inherit;}
+
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after {clear: both;}
+
+.left {float:left;}
+.right {float:right;}
+.text-right {text-align: right;}
+
+.page-wrapper {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    height: calc(100% - 48px);
+}
+
+/*Sidebars toggle*/
+
+.sidebar-toggle {
+    background: #DF314D;
+    border-radius: 3px;
+    display: block;
+    position: relative;
+    padding: 10px 7px;
+    margin: 7px;
+}
+
+.sidebar-toggle .bar{
+    display: block;
+    width: 18px;
+    margin-bottom: 3px;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 1px;
+}
+
+.sidebar-toggle .bar:last-child{
+    margin-bottom: 0;
+}
+
+.circle {
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    margin: 0 5px 0 0;
+}
+
+.circle-green {background-color: green;}
+.circle-red {background-color: red;}
+.circle-orange {background-color: orange;}
+
+/*Header*/
+
+#touch-menu, nav {background-color: #35404F;}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 48px;
+    text-align: center;
+}
+
+.nav {
+    height: 100%;
+    display: inline-block;
+    list-style: none;
+    color: #fff;
+}
+
+.nav li {float: left;}
+
+#touch-menu,
+.nav li a {
+    line-height: 48px;
+    display: block;
+    height: 48px;
+    padding: 0 10px;
+    -webkit-transition: background-color 0.5s;
+    -moz-transition: background-color 0.5s;
+    -o-transition: background-color 0.5s;
+    transition: background-color 0.5s;
+}
+
+.friends li a:hover,
+
+#touch-menu:hover,
+.nav li a:hover {
+    background-color: #4285F4;
+}
+
+#touch-menu {
+    display:none;
+    margin: 0 auto;
+    width: calc(100% - 100px);
+    color: #fff;
+}
+
+@media only screen and (max-width: 768px) {
+    .nav {
+        position: absolute;
+        top: 100px;
+        left: 0;
+        right: 0;
+    }
+    #touch-menu {display: inline-block;}
+    .nav li {float: none;}
+}
+
+
+/*Sidebars*/
+.sidebar {
+    -webkit-transition:  width 0.5s;
+    -moz-transition:  width 0.5s;
+    -o-transition:  width 0.5s;
+    transition:  width 0.5s;
+    position: fixed;
+    background-color: #3B5998;
+    height: calc(100% - 48px);
+}
+
+/*Left sidebar*/
+.left-sidebar {
+    width: 0;
+    top: 48px;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+/** friends list **/
+
+.friends {list-style: none;}
+
+.friends li {}
+
+.friends li a {
+    color: #fff;
+    padding: 5px;
+    -webkit-transition: background-color .5s;
+    -moz-transition: background-color .5s;
+    -o-transition: background-color .5s;
+    transition: background-color .5s;
+    display: block;
+}
+
+/*Rigth sidebar*/
+.right-sidebar {
+    width: 0;
+    top: 48px;
+    right: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.messages {
+    list-style: none;
+}
+
+.messages li {
+    background-color: #fff;
+    margin: 5px;
+    padding: 3px;
+}
+
+.messages li .sender {font-style: italic;}
+
+.messages li .sender .send-date {text-decoration: underline; font-style: inherit; margin: 0 3px;}
+
+.messages li .message {}
+
+
+.opened-left-sidebar {
+    width: 300px;
+}
+
+.opened-right-sidebar {
+    width: 300px;
+}
+
+/*Content*/
+.content {
+    position: fixed;
+    padding: 5px;
+    margin: 48px 0 0 0;
+    -webkit-transition: margin 0.5s;
+    -moz-transition: margin 0.5s;
+    -o-transition: margin 0.5s;
+    transition: margin 0.5s;
+    height: calc(100% - 48px);
+    overflow-y: scroll;
+    background-color: #424242;
+}
+
+.opened-left-sidebar-content {
+    margin-left: 300px;
+}
+
+.opened-right-sidebar-content {
+    margin-right: 300px;
+}
+
+.user-video {
+    text-align: center;
+}
+
+.user-video img {
+    width: auto;
+    height: auto;
+    margin: 5px auto;
+    display: inline-block;
+}
+
+/*Footer*/
