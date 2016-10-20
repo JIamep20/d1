@@ -55,7 +55,7 @@ a, a:hover {text-decoration: none; color: inherit;}
     width: 100%;
     margin: 0 auto;
     position: relative;
-    height: calc(100% - 48px);
+    height: 100%;
 }
 
 /*Sidebars toggle*/
@@ -96,13 +96,13 @@ a, a:hover {text-decoration: none; color: inherit;}
 
 /*Header*/
 
-#touch-menu, nav {background-color: #35404F;}
+#touch-menu, nav, .nav li a {background-color: #35404F;}
 
 nav {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    right: 0;
     height: 48px;
     text-align: center;
 }
@@ -114,7 +114,7 @@ nav {
     color: #fff;
 }
 
-.nav li {float: left;}
+.nav li {float: left; z-index: 555;}
 
 #touch-menu,
 .nav li a {
@@ -145,12 +145,23 @@ nav {
 @media only screen and (max-width: 768px) {
     .nav {
         position: absolute;
-        top: 100px;
+        top: 100%;
         left: 0;
         right: 0;
+        display: none;
+
+        -webkit-transition: height .5s;
+        -moz-transition: height .5s;
+        -o-transition: height .5s;
+        transition: height .5s;
     }
     #touch-menu {display: inline-block;}
     .nav li {float: none;}
+
+
+    .show-touch-menu {
+        display: block;
+    }
 }
 
 
@@ -199,6 +210,52 @@ nav {
     overflow-y: scroll;
 }
 
+.aside-wrapper {
+    position: relative;
+    padding-bottom: 200px;
+}
+
+.right-sidebar .message-input {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 195px;
+    margin: 5px;
+}
+
+.message-input textarea {
+    width: 100%;
+    resize: vertical;
+    max-height: 500px;
+    min-height: 100px;
+    height: 165px;
+
+    padding: 3px;
+    font-size: 115%;
+}
+
+.message-input textarea:focus {
+
+}
+
+.message-input button {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-weight: 400;
+    width: 100%;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid #333;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #00A03E;
+}
+
 .messages {
     list-style: none;
 }
@@ -226,14 +283,12 @@ nav {
 
 /*Content*/
 .content {
-    position: fixed;
     padding: 5px;
-    margin: 48px 0 0 0;
     -webkit-transition: margin 0.5s;
     -moz-transition: margin 0.5s;
     -o-transition: margin 0.5s;
     transition: margin 0.5s;
-    height: calc(100% - 48px);
+    height: 100%;
     overflow-y: scroll;
     background-color: #424242;
 }
