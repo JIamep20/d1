@@ -96,7 +96,7 @@ a, a:hover {text-decoration: none; color: inherit;}
 
 /*Header*/
 
-#touch-menu, nav, .nav li a {background-color: #35404F;}
+#touch-menu, nav, .nav li > a {background-color: #35404F;}
 
 nav {
     position: fixed;
@@ -126,6 +126,37 @@ nav {
     -moz-transition: background-color 0.5s;
     -o-transition: background-color 0.5s;
     transition: background-color 0.5s;
+    min-width: 50px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
 }
 
 .friends li a:hover,
@@ -206,22 +237,23 @@ nav {
     width: 0;
     top: 48px;
     right: 0;
-    overflow-x: hidden;
-    overflow-y: scroll;
+    /*overflow-x: hidden;*/
+    height: calc(100% - 48px);
+    padding-bottom: 100px;
 }
 
 .aside-wrapper {
-    position: relative;
-    padding-bottom: 200px;
+    height: calc(100% - 105px);
+    overflow-y: scroll;
 }
 
 .right-sidebar .message-input {
+    margin: 5px;
+    display: block;
     position: absolute;
-    bottom: 0;
     left: 0;
     right: 0;
-    height: 195px;
-    margin: 5px;
+    bottom: 0;
 }
 
 .message-input textarea {
